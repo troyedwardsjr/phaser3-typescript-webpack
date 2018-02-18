@@ -17,7 +17,7 @@ var definePlugin = new webpack.DefinePlugin({
 module.exports = {
   entry: {
     app: [
-      path.resolve(__dirname, 'src/main.js')
+      path.resolve(__dirname, 'src/main.ts')
     ],
     //vendor: ['pixi']
 
@@ -73,9 +73,9 @@ module.exports = {
     tls: 'empty'
   },
   resolve: {
+    extensions: ['.ts', '.js'],
     alias: {
-      'phaser': phaser,
-
+      'phaser': phaser
     }
   }
 }
