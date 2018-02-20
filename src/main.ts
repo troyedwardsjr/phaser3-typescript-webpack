@@ -2,7 +2,7 @@ import 'phaser';
 
 import TestScene from './scenes/PlayScene';
 
-const config:any = {
+const config:GameConfig = {
     type: Phaser.AUTO,
     parent: 'content',
     width: 640,
