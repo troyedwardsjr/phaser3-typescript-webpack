@@ -1,3 +1,8 @@
+# Phaser 3 Typescript Webpack Boilerplate
+![screenshot](https://i.imgur.com/pCzjUYW.png)
+![screenshot](https://i.imgur.com/YuzMdYi.png)
+![screenshot](https://i.imgur.com/GIdIa5q.png)
+
 # Setup
 You’ll need to install a few things before you have a working copy of the project.
 
