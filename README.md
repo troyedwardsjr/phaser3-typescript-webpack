@@ -1,5 +1,5 @@
 # Phaser 3 Typescript Webpack Boilerplate
-![screenshot](https://i.imgur.com/pCzjUYW.png)
+![screenshot](https://i.imgur.com/XXyX8KO.png)
 ![screenshot](https://i.imgur.com/YuzMdYi.png)
 ![screenshot](https://i.imgur.com/GIdIa5q.png)
 
