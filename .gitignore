@@ -18,3 +18,5 @@ dump/
 *.bak*
 *.old*
 higherVolume/
+yarn.lock
+package-lock.json

@@ -9,8 +9,8 @@ var phaser = path.join(phaserModule, 'src/phaser.js')
 
 var definePlugin = new webpack.DefinePlugin({
     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
-    WEBGL_RENDERER: true, // I did this to make webpack work, but I'm not really sure it should always be true
-    CANVAS_RENDERER: true // I did this to make webpack work, but I'm not really sure it should always be true
+    WEBGL_RENDERER: true, 
+    CANVAS_RENDERER: true 
 })
 
 module.exports = {
@@ -58,9 +58,15 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.ts$/, use: ['awesome-typescript-loader'], include: path.join(__dirname, 'src') },
-            { test: /phaser-split\.js$/, use: ['expose-loader?Phaser'] },
-            { test: [/\.vert$/, /\.frag$/], use: 'raw-loader' }
+            {
+                test: /\.ts$/,
+                loaders: ['babel-loader', 'awesome-typescript-loader'],
+                include: path.join(__dirname, 'src'),
+            },
+            {
+                test: [/\.vert$/, /\.frag$/],
+                use: 'raw-loader'
+            }
         ]
     },
     node: {
@@ -75,5 +81,3 @@ module.exports = {
         }
     }
 }
-
-//{ test: /\.ts$/, use: ['awesome-typescript-loader'], include: path.join(__dirname, 'src') },
