@@ -23510,7 +23510,7 @@ declare namespace Phaser {
              * @param path Optional texture file specific XHR settings.
              * @param xhrSettings Optional atlas file specific XHR settings.
              */
-    function SpriteSheetFile(key: string, url: string, config: object, path: string, xhrSettings?: Phaser.Loader.XHRSettings): LoaderPlugin;
+    function SpriteSheetFile(key: string, url: string, config: object, path: string, xhrSettings?: Phaser.Loader.XHRSettings): object;
 
             /**
              * A Tilemap File.
