@@ -5564,76 +5564,6 @@ declare namespace Phaser {
              */
             destroy(): void;
 
-            /**
-            * Return an array listing the events for which the emitter has registered listeners.
-            */
-            eventNames(): any[];
-
-            /**
-             * Return the listeners registered for a given event.
-             * @param event The event name.
-             */
-            listeners(event: string | symbol): any[];
-
-            /**
-             * Return the number of listeners listening to a given event.
-             * @param event The event name.
-             */
-            listenerCount(event: string | symbol): number;
-
-            /**
-             * Calls each of the listeners registered for a given event.
-             * @param event The event name.
-             */
-            emit(event: string | symbol): Boolean;
-
-            /**
-             * Add a listener for a given event.
-             * @param event The event name.
-             * @param fn The listener function.
-             * @param context The context to invoke the listener with. Default this.
-             */
-            on(event: string | symbol, fn: Function, context?: any): EventEmitter;
-
-            /**
-             * Add a listener for a given event.
-             * @param event The event name.
-             * @param fn The listener function.
-             * @param context The context to invoke the listener with. Default this.
-             */
-            addListener(event: string | symbol, fn: Function, context?: any): EventEmitter;
-
-            /**
-             * Add a one-time listener for a given event.
-             * @param event The event name.
-             * @param fn The listener function.
-             * @param context The context to invoke the listener with. Default this.
-             */
-            once(event: string | symbol, fn: Function, context?: any): EventEmitter;
-
-            /**
-             * Remove the listeners of a given event.
-             * @param event The event name.
-             * @param fn Only remove the listeners that match this function.
-             * @param context Only remove the listeners that have this context.
-             * @param once Only remove one-time listeners.
-             */
-            removeListener(event: string | symbol, fn: Function, context: any, once: boolean): EventEmitter;
-
-            /**
-             * Remove the listeners of a given event.
-             * @param event The event name.
-             * @param fn Only remove the listeners that match this function.
-             * @param context Only remove the listeners that have this context.
-             * @param once Only remove one-time listeners.
-             */
-            off(event: string | symbol, fn: Function, context: any, once: boolean): EventEmitter;
-
-            /**
-             * Remove all listeners, or those of the specified event.
-             * @param event The event name.
-             */
-            removeAllListeners(event?: string | symbol): EventEmitter;
         }
 
     }
@@ -9512,7 +9442,7 @@ declare namespace Phaser {
              * Note: This method will only be available if the Graphics Game Object has been built into Phaser.
              * @param config [description]
              */
-            graphics(config: object): Phaser.GameObjects.Graphics;
+            graphics(config?: object): Phaser.GameObjects.Graphics;
 
             /**
              * Creates a new Group Game Object and returns it.
@@ -9788,7 +9718,7 @@ declare namespace Phaser {
              * Note: This method will only be available if the Graphics Game Object has been built into Phaser.
              * @param config [description]
              */
-            graphics(config: object): Phaser.GameObjects.Graphics;
+            graphics(config?: object): Phaser.GameObjects.Graphics;
 
             /**
              * Creates a new Group Game Object and adds it to the Scene.
@@ -20041,18 +19971,18 @@ declare namespace Phaser {
 
         namespace Intersects {
             /**
-             * [description]
-             * @param circleA [description]
-             * @param circleB [description]
-             */
-            function CircleToCircle(circleA: Phaser.Geom.Circle, circleB: Phaser.Geom.Circle): boolean;
+            * [description]
+            * @param circleA [description]
+            * @param circleB [description]
+            */
+            function CircleToCircle(circleA: Phaser.Geom.Circle | object, circleB: Phaser.Geom.Circle | object): boolean;
 
             /**
              * [description]
              * @param circle [description]
              * @param rect [description]
              */
-            function CircleToRectangle(circle: Phaser.Geom.Circle, rect: Phaser.Geom.Rectangle): boolean;
+            function CircleToRectangle(circle: Phaser.Geom.Circle | object, rect: Phaser.Geom.Rectangle | object): boolean;
 
             /**
              * [description]
@@ -20060,7 +19990,7 @@ declare namespace Phaser {
              * @param rectB [description]
              * @param output [description]
              */
-            function GetRectangleIntersection(rectA: Phaser.Geom.Rectangle, rectB: Phaser.Geom.Rectangle, output?: Phaser.Geom.Rectangle): Phaser.Geom.Rectangle;
+            function GetRectangleIntersection(rectA: Phaser.Geom.Rectangle | object, rectB: Phaser.Geom.Rectangle | object, output?: Phaser.Geom.Rectangle | object): Phaser.Geom.Rectangle;
 
             /**
              * [description]
@@ -20068,7 +19998,7 @@ declare namespace Phaser {
              * @param circle [description]
              * @param nearest [description]
              */
-            function LineToCircle(line: Phaser.Geom.Line, circle: Phaser.Geom.Circle, nearest?: Phaser.Geom.Point): boolean;
+            function LineToCircle(line: Phaser.Geom.Line | object, circle: Phaser.Geom.Circle | object, nearest?: Phaser.Geom.Point | object): boolean;
 
             /**
              * [description]
@@ -20076,7 +20006,7 @@ declare namespace Phaser {
              * @param line2 [description]
              * @param out [description]
              */
-            function LineToLine(line1: Phaser.Geom.Line, line2: Phaser.Geom.Line, out?: Phaser.Geom.Point): boolean;
+            function LineToLine(line1: Phaser.Geom.Line | object, line2: Phaser.Geom.Line | object, out?: Phaser.Geom.Point | object): boolean;
 
             /**
              * Checks for intersection between the Line and a Rectangle shape, or a rectangle-like
@@ -20099,35 +20029,35 @@ declare namespace Phaser {
              * @param line [description]
              * @param rect [description]
              */
-            function LineToRectangle(line: Phaser.Geom.Line, rect: Phaser.Geom.Rectangle | object): boolean;
+            function LineToRectangle(line: Phaser.Geom.Line | object, rect: Phaser.Geom.Rectangle | object): boolean;
 
             /**
              * [description]
              * @param point [description]
              * @param line [description]
              */
-            function PointToLine(point: Phaser.Geom.Point, line: Phaser.Geom.Line): boolean;
+            function PointToLine(point: Phaser.Geom.Point | object, line: Phaser.Geom.Line | object): boolean;
 
             /**
              * [description]
              * @param point [description]
              * @param line [description]
              */
-            function PointToLineSegment(point: Phaser.Geom.Point, line: Phaser.Geom.Line): boolean;
+            function PointToLineSegment(point: Phaser.Geom.Point | object, line: Phaser.Geom.Line | object): boolean;
 
             /**
              * [description]
              * @param rectA [description]
              * @param rectB [description]
              */
-            function RectangleToRectangle(rectA: Phaser.Geom.Rectangle, rectB: Phaser.Geom.Rectangle): boolean;
+            function RectangleToRectangle(rectA: Phaser.Geom.Rectangle | object, rectB: Phaser.Geom.Rectangle | object): boolean;
 
             /**
              * [description]
              * @param rect [description]
              * @param triangle [description]
              */
-            function RectangleToTriangle(rect: Phaser.Geom.Rectangle, triangle: Phaser.Geom.Triangle): boolean;
+            function RectangleToTriangle(rect: Phaser.Geom.Rectangle | object, triangle: Phaser.Geom.Triangle): boolean;
 
             /**
              * [description]
@@ -20138,21 +20068,21 @@ declare namespace Phaser {
              * @param bottom [description]
              * @param tolerance [description] Default 0.
              */
-            function RectangleToValues(rect: Phaser.Geom.Rectangle, left: number, right: number, top: number, bottom: number, tolerance?: number): boolean;
+            function RectangleToValues(rect: Phaser.Geom.Rectangle | object, left: number, right: number, top: number, bottom: number, tolerance?: number): boolean;
 
             /**
              * [description]
              * @param triangle [description]
              * @param circle [description]
              */
-            function TriangleToCircle(triangle: Phaser.Geom.Triangle, circle: Phaser.Geom.Circle): boolean;
+            function TriangleToCircle(triangle: Phaser.Geom.Triangle, circle: Phaser.Geom.Circle | object): boolean;
 
             /**
              * [description]
              * @param triangle [description]
              * @param line [description]
              */
-            function TriangleToLine(triangle: Phaser.Geom.Triangle, line: Phaser.Geom.Line): boolean;
+            function TriangleToLine(triangle: Phaser.Geom.Triangle, line: Phaser.Geom.Line | object): boolean;
 
             /**
              * [description]
@@ -20160,7 +20090,6 @@ declare namespace Phaser {
              * @param triangleB [description]
              */
             function TriangleToTriangle(triangleA: Phaser.Geom.Triangle, triangleB: Phaser.Geom.Triangle): boolean;
-
         }
 
         /**
@@ -23510,7 +23439,7 @@ declare namespace Phaser {
              * @param path Optional texture file specific XHR settings.
              * @param xhrSettings Optional atlas file specific XHR settings.
              */
-    function SpriteSheetFile(key: string, url: string, config: object, path: string, xhrSettings?: Phaser.Loader.XHRSettings): object;
+            function SpriteSheetFile(key: string, url: string, config: object, path: string, xhrSettings?: Phaser.Loader.XHRSettings): object;
 
             /**
              * A Tilemap File.
@@ -23800,7 +23729,7 @@ declare namespace Phaser {
              * @param textureXhrSettings Optional texture file specific XHR settings.
              * @param atlasXhrSettings Optional atlas file specific XHR settings.
              */
-            atlas(key: string, textureURL: string, atlasURL: string, textureXhrSettings: object, atlasXhrSettings: object): Phaser.Loader.LoaderPlugin;
+            atlas(key: string, textureURL: string, atlasURL?: string, textureXhrSettings?: object, atlasXhrSettings?: object): Phaser.Loader.LoaderPlugin;
 
             /**
              * Adds an Audio file to the current load queue.
@@ -24009,25 +23938,6 @@ declare namespace Phaser {
              * @param xhrSettings [description]
              */
             script(key: string, url: string, xhrSettings?: Phaser.Loader.XHRSettings): Phaser.Loader.LoaderPlugin;
-
-            /**
-             * Adds a Spritesheet to the current load queue.
-             * 
-             * 
-             * 
-             * Note: This method will only be available if the Spritesheet File type has been built into Phaser.
-             * 
-             * 
-             * 
-             * The file is **not** loaded immediately after calling this method.
-             * 
-             * Instead, the file is added to a queue within the Loader, which is processed automatically when the Loader starts.
-             * @param key [description]
-             * @param url [description]
-             * @param config [description]
-             * @param xhrSettings [description]
-             */
-            spritesheet(key: string, url: string, config: object, xhrSettings?: Phaser.Loader.XHRSettings): Phaser.Loader.LoaderPlugin;
 
             /**
              * Adds an SVG file to the current load queue.
@@ -39277,6 +39187,16 @@ declare namespace Phaser {
 
         /**
         * Should be overridden by your own Scenes.
+        */
+        preload(): void;
+
+        /**
+        * Should be overridden by your own Scenes.
+        */
+        create(): void;
+
+        /**
+        * Should be overridden by your own Scenes.
         * @param {number} timestep [description]
         * @param {number} delta [description]
         */
@@ -47706,7 +47626,7 @@ declare namespace Phaser {
              * tile faces. If set to null, interesting tile faces will not be drawn. Default grey.
              * @param layer [description]
              */
-            renderDebug(graphics: Phaser.GameObjects.Graphics, styleConfig: object, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
+            renderDebug(graphics: Phaser.GameObjects.Graphics, styleConfig?: object, layer?: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
 
             /**
              * Scans the given rectangular area (given in tile coordinates) for tiles with an index matching
