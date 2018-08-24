@@ -1,8 +1,9 @@
 {
   "presets": [
     "@babel/preset-env",
-    "@babel/preset-stage-3",
-    "@babel/preset-es2017",
     "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
   ]
 }
